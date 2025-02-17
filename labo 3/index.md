@@ -142,6 +142,24 @@ Gegeven:
 - poortnummer (individueel)
 - wachtwoord (individueel)
 ---
+![temp mail](./afbeeldingen/tempmail.png)
+
+note:
+
+- geen "leerstof"
+- wel heel nuttig
+- kwestie van privacy en digitale hygiëne
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dm8i4IFTA7k?si=oG083hSw_HZHSzG2"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+
+note:
+- aanzienlijke beperkingen, maar gratis en geen CC vereist
+- kan ook TLS koppelen
+---
 - `ssh USERNAAM@SERVERIP`
 - `docker exec -it CONTAINERID bash`
 - `apt update; apt install -y nano; nano htdocs/index.html`
@@ -197,24 +215,4 @@ Opdracht (Git bash)
 - test login zonder wachtwoord
 - registreer public key in Github
 - maak een niet-lege repo, clone via SSH, commit iets, push
----
 
-![temp mail](./afbeeldingen/tempmail.png)
-
-note:
-
-- geen "leerstof"
-- wel heel nuttig
-- kwestie van privacy en digitale hygiëne
----
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dm8i4IFTA7k?si=oG083hSw_HZHSzG2"
-    title="YouTube video player" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen></iframe>
-
-note:
-- aanzienlijke beperkingen, maar gratis en geen CC vereist
-- kan ook TLS koppelen
-- wij doen dit vandaag niet omwille van de setup
-- zou wel gaan als ieder eigen VPS had (zoals met opdracht Azure!)
