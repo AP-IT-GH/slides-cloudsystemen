@@ -137,9 +137,8 @@ note:
 Gegeven:
 
 - server IP (zelfde voor iedereen)
-- container ID (individueel)
-- loginnaam (individueel)
-- poortnummer (individueel)
+- poortnummer SSH (individueel)
+- poortnummer web server (individueel)
 - wachtwoord (individueel)
 ---
 ![temp mail](./afbeeldingen/tempmail.png)
