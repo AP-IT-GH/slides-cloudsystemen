@@ -160,9 +160,9 @@ note:
 - aanzienlijke beperkingen, maar gratis en geen CC vereist
 - kan ook TLS koppelen
 ---
-- `ssh USERNAAM@SERVERIP`
-- `docker exec -it CONTAINERID bash`
-- `apt update; apt install -y nano; nano htdocs/index.html`
+- `ssh -p SSHPOORT student@37.27.249.87`
+  - je wachtwoord is de lange reeks tekens op DigitAP
+- `nano htdocs/index.html`
 - bewerk de HTML en sla op zodat je je eigen site kan herkennen
 - surf naar de website (hoe?)
 - registreer via FreeDNS (niet toegankelijk via netwerk school, gebruik hotspot)
