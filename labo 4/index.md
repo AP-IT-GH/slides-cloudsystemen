@@ -23,9 +23,6 @@ Voorbeelden:
 - 80
 - 443
 - 3306
----
-![port forwarding bij Telenet](./afbeeldingen/portforwarding.png)
----
 Sockets
 
 note:
@@ -36,7 +33,15 @@ note:
 ---
 UDP
 
-![formaat UDP](./afbeeldingen/udp.png)
+```mermaid
+packet-beta
+title UDP Packet
+0-15: "Source Port"
+16-31: "Destination Port"
+32-47: "Length"
+48-63: "Checksum"
+64-95: "Data (variable length)"
+```
 
 note:
 - denkvraag: waarom 2 bytes voor poorten?
@@ -53,7 +58,27 @@ note:
 ---
 TCP
 
-![formaat TCP](./afbeeldingen/tcp.png)
+```mermaid
+packet-beta
+0-15: "Source Port"
+16-31: "Destination Port"
+32-63: "Sequence Number"
+64-95: "Acknowledgment Number"
+96-99: "Data Offset"
+100-105: "Reserved"
+106: "URG"
+107: "ACK"
+108: "PSH"
+109: "RST"
+110: "SYN"
+111: "FIN"
+112-127: "Window"
+128-143: "Checksum"
+144-159: "Urgent Pointer"
+160-191: "(Options and Padding)"
+192-255: "Data (variable length)"
+```
+
 ---
 - complexer
 - connectiegeoriënteerd
@@ -69,81 +94,47 @@ note:
 ---
 ## Netwerklaag
 
-<aside class="notes">
-                    <ul>
-                        <li>functie was: data van machine A naar machine B krijgen</li>
-                        <li>vraag: waarom niet gewoon MAC-adressen en switches?</li>
-                        <li>antwoord: switch onthoudt <strong>alle</strong> adressen achter een bepaalde poort (binnen netwerk afgebakend door router)</li>
-                        <li>heel het Internet zou één lokaal netwerk zijn, dus...</li>
-                    </ul>
-                </aside>
+note:
+- functie was: data van machine A naar machine B krijgen
+- vraag: waarom niet gewoon MAC-adressen en switches?
+- antwoord: switch onthoudt **alle** adressen achter een bepaalde poort (binnen netwerk afgebakend door router)
+- heel het Internet zou één lokaal netwerk zijn, dus...
 ---
-                <table style="color: white">
-                    <thead>
-                        <tr>
-                            <td></td>
-                            <td>MAC</td>
-                            <td>IP</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>sterkte associatie</td>
-                            <td>"vast"</td>
-                            <td>"veranderlijk"</td>
-                        </tr>
-                        <tr><td>structuur</td>
-                            <td>vlak</td>
-                            <td>hiërarchisch</td>
-                        </tr>
-                        <tr><td>afhankelijk van</td>
-                            <td>fabrikant hardware</td>
-                            <td>subnet</td>
-                        </tr>
-                        <tr><td>vergelijk met</td>
-                            <td>rijksregisternummer</td>
-                            <td>thuisadres</td>
-                        </tr>
-                    </tbody>
-                </table>
+| kenmerk | MAC | IP |
+|-|-|-|
+| sterkte associatie | "vast" | "veranderlijk" |
+| structuur | vlak | hiërarchisch |
+| afhankelijk van | fabrikant | subnet |
+| vergelijk met | rijksregisternummer | thuisadres |
 ---
-                basisidee bereikbaarheid
-                <aside class="notes">
-                    <ul>
-                        <li>vinden niet de machine, wel het (meest specifieke) subnet</li>
-                        <li>op subnet gebeurt een "broadcast"</li>
-                        <li>dus IP-adres wordt op het einde omgezet naar MAC-adres</li>
-                    </ul>
-                </aside>
+basisidee bereikbaarheid
+
+note:
+- vinden niet de machine, wel het (meest specifieke) subnet
+- op subnet gebeurt een "broadcast"
+- dus IP-adres wordt op het einde omgezet naar MAC-adres
 ---
-                IPv4 (classless)
-                <aside class="notes">
-                    <ul>
-                        <li>Bestaat ook ouder systeem met "klassen". Niet belangrijk voor programmeurs.</li>
-                    </ul>
-                </aside>
+IPv4 (classless)
+
+note:
+
+Bestaat ook ouder systeem met "klassen". Niet belangrijk voor programmeurs.
+
 ---
-                <ul>
-                    <li>192.168.0.222</li>
-                    <li>11000000.101...</li>
-                </ul>
-                <aside class="notes">
-                    <ul>
-                        <li>4 bytes = 32 bits</li>
-                        <li>Je mag rekenmachine in "programming mode" gebruiken.</li>
-                    </ul>
-                </aside>
+- 192.168.0.222
+- 11000000.101...
+
+note:
+- 4 bytes = 32 bits
+- je mag rekenmachine in programming mode gebruiken
 ---
-                        <ul>
-                            <li>hostgedeelte</li>
-                            <li>netwerkgedeelte</li>
-                        </ul>
-                        <aside class="notes">
-                            <ul>
-                                <li>Machines op zelfde netwerk hebben zelfde netwerkgedeelte (ander hostgedeelte)</li>
-                                <li>Uit elkaar halen: netmasker nodig</li>
-                                <li>"zelfde netwerkgedeelte" = IN BINAIR</li>
-                            </ul>
-                        </aside>
+- hostgedeelte
+- netwerkgedeelte
+
+note:
+- machines op zelfde netwerk hebben zelfde netwerkgedeelte (ander hostgedeelte)
+  - **in binair**, zelfde netwerkgedeelte kan voorgesteld zijn met andere reeks getallen in decimaal!
+- om de twee te scheiden: netmasker nodig
 ---
 netmasker
 
@@ -153,14 +144,17 @@ note:
 - afgekort tot slash-notatie
 - **hoe lager de waarde, hoe groter het netwerk**
 ---
-                        <pre>
+
+```text
 11000000.1010000.00000000.11011110 # 192.168.0.222
 11111111.1111111.00000000.00000000 # 255.255.0.0
 11000000.1010000.00000000.00000000
-                        </pre>
-                        <aside class="notes">
-                            hoe zou je dan hostgedeelte kunnen krijgen?
-                        </aside>
+```
+
+note:
+
+hoe zou je dan hostgedeelte kunnen krijgen?
+
 ---
                         speciale adressen
                         <aside class="notes">
@@ -173,10 +167,11 @@ note:
                             </ul>
                         </aside>
 ---
-                        Opdrachten
-                            <aside class="notes">
-                                Gebruik rekenmachine in programmeermodus.
-                            </aside>
+Opdrachten
+
+note:
+Gebruik je rekenmachine in programmeermodus.
+
 ---
                             <ul>
                                 <li>Is 10.4.3.0/16 een geldig netwerkadres?</li>
@@ -231,18 +226,16 @@ note:
                                 <li>Maximaal aantal hosts</li>
                             </ul>
 ---
-                IP-adressen voor:<br>
-                <ul>
-                    <li>subnetten (netwerk en broadcast)</li>
-                    <li>routers</li>
-                    <li>hosts</li>
-                    <li><strong>niet</strong> voor modems, hubs of switches</li>
-                </ul>
-                <aside class="notes">
-                    <ul>
-                        <li>Voor routers: minstens twee</li>
-                    </ul>
-                </aside>
+IP-adressen voor:
+
+- subnetten (netwerk en broadcast)
+- routers
+- hosts
+- **niet** voor modems, hubs of switches
+
+note:
+voor routers minstens twee
+
 ---
                 Routers
                 <aside class="notes">
@@ -265,12 +258,15 @@ note:
                     </ul>
                 </aside>
 ---
-                <img src="./afbeeldingen/ARP.png" />
-                <aside class="notes">
-                    Het is dus genoeg om iets tot bij de router te krijgen die aangesloten is op dat subnet.
-                </aside>
+![ARP](./afbeeldingen/ARP.png)
+
+note:
+
+- Eens op juiste netwerk doet machine een broadcast om te vragen wie een bepaald IP heeft.
+- Het is dus genoeg om iets tot bij de router te krijgen die aangesloten is op dat subnet.
+
 ---
-                Demo: invullen routeringstabel
+Demo: invullen routeringstabel
 ---
                 Toekenning van adressen
                 <aside class="notes">
@@ -283,26 +279,24 @@ note:
                     </ul>
                 </aside>
 ---
-                Opdracht
-                <aside class="notes">
-                    Ken adressen toe. Maak connectiviteit mogelijk.
-                </aside>
+Opdracht
+
+note:
+Ken adressen toe. Maak connectiviteit mogelijk.
+
 ---
-                Achilleshiel IPv4
-                <aside class="notes">
-                    Stel dat heel het Internet één groot lokaal netwerk was (en dat we toch IPv4 gebruikten), hoe veel
-                    adressen dan?
-                    (toon met rekenmachine)
-                </aside>
+Achilleshiel IPv4
+
+note:
+
+Stel dat heel het Internet één groot lokaal netwerk was (en dat we toch IPv4 gebruikten), hoe veel adressen dan? (toon met rekenmachine)
 ---
-                NAT (PAT)
-                <aside class="notes">
-                    <ul>
-                        <li>Netwerkadresvertaling / Network Address Translation</li>
-                        <li>Vergelijk: ipconfig en myip.com</li>
-                        <li>(indien IPv4): zal voor iedereen <strong>zelfde</strong> zijn!</li>
-                    </ul>
-                </aside>
+NAT (PAT)
+
+note:
+- Netwerkadresvertaling / Network Address Translation
+- Vergelijk: ipconfig en myip.com
+- (indien IPv4): zal voor iedereen **zelfde** zijn!
 ---
                 <iframe width="560" height="315"
                     src="https://www.youtube.com/embed/2t8-WRZWCq8?si=IbcDw07DOS24lm2u&amp;start=47"
@@ -326,3 +320,5 @@ note:
                         </ul>
                     </ul>
                 </aside>
+---
+![port forwarding bij Telenet](./afbeeldingen/portforwarding.png)
