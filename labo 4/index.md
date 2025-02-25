@@ -23,6 +23,7 @@ Voorbeelden:
 - 80
 - 443
 - 3306
+---
 Sockets
 
 note:
