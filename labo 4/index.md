@@ -96,10 +96,11 @@ note:
 ## Netwerklaag
 
 note:
+- je machine beschikt over een hardwareadres genaamd een MAC-adres (medium access control)
 - functie was: data van machine A naar machine B krijgen
 - vraag: waarom niet gewoon MAC-adressen en switches?
 - antwoord: switch onthoudt **alle** adressen achter een bepaalde poort (binnen netwerk afgebakend door router)
-- heel het Internet zou één lokaal netwerk zijn, dus...
+- heel het Internet zou één lokaal netwerk zijn, dus zouden per poort enorm veel informatie moeten bijhouden
 ---
 | kenmerk | MAC | IP |
 |-|-|-|
@@ -135,7 +136,7 @@ note:
 note:
 - machines op zelfde netwerk hebben zelfde netwerkgedeelte (ander hostgedeelte)
   - **in binair**, zelfde netwerkgedeelte kan voorgesteld zijn met andere reeks getallen in decimaal!
-- om de twee te scheiden: netmasker nodig
+- om de twee te scheiden: netmasker nodig, zie volgende slide
 ---
 netmasker
 
@@ -149,41 +150,60 @@ note:
 ```text
 11000000.10101000.00000000.11011110 # 192.168.0.222
 11111111.11111111.00000000.00000000 # 255.255.0.0
-11000000.10101000.00000000.00000000
+11000000.10101000.00000000.00000000 # 192.168.0.0
 ```
 
 note:
 
-hoe zou je dan hostgedeelte kunnen krijgen?
+- 192.168.0.0/16 is dus het adres van het netwerk waarop 192.168.0.222 zich bevindt
+  - netmasker is zelfde als voor de host, bitsgewijze AND levert de vier bytewaarden
+- hoe zou je dan hostgedeelte kunnen krijgen?
 
 ---
-                        speciale adressen
-                        <aside class="notes">
-                            <ul>
-                                <li>netwerkadres (hostbits op 0) wordt eigenlijk niet als dusdanig gebruikt</li>
-                                <li>maar netmasker toepassen doet niets, dus zou niet te onderscheiden zijn van andere
-                                    adressen binnen zelfde netwerk</li>
-                                <li>broadcastadres is wat naam zegt, verkregen door alle hostbits op 1 te zetten</li>
-                                <li>denkvraag: aantal hosts op netwerk met netmasker van lengte N?</li>
-                            </ul>
-                        </aside>
+"zit host H/X op netwerk N/Y?"
+
+- we moeten het netwerk van H achterhalen
+- neem het IP van H
+- pas een netmasker van X bits toe
+  - levert het netwerkgedeelte van H
+  - dus: het kleinste netwerk waarin H zit
+- bekijk het resultaat:
+  - identiek aan N en X=Y? ⇒ ja
+  - iets anders? ⇒ volgende slide
+---
+"is netwerk N1/X deel van netwerk N2/Y?"
+
+- X < Y? ⇒ nee (korter netmasker = groter netwerk)
+- X = Y? ⇒ enkel als N1 = N2 (zijn identiek)
+- X > Y?
+  - pas netmasker van Y bits toe op N1
+  - is de uitkomst N2? ⇒ ja
+  - iets anders? ⇒ nee
+---
+speciale adressen
+
+note:
+- netwerkadres (alle hostbits op 0) = adres van een netwerk zelf, niet van een machine
+  - wordt niet echt op zich gebruikt, maar kan ook niet dienen voor host
+  - komt omdat netmasker toepassen hier niets aan verandert
+- broadcastadres: alle hostbits zijn 1, dus hoogst mogelijke adres binnen dat netwerk
+  - gebruikt om een bericht naar iedereen op het netwerk te sturen
+- denkvraag: hoe veel hosts kunnen we aansluiten op een netwerk met netmasker van lengte N
+  - antwoord: 2^(32-N)-2 ("twee minder dan twee tot de macht H, waarbij H het aantal hostbits is")
 ---
 Opdrachten
 
 note:
 Gebruik je rekenmachine in programmeermodus.
-
 ---
-                            <ul>
-                                <li>Is 10.4.3.0/16 een geldig netwerkadres?</li>
-                                <li>Is 192.168.0.0/16 een geldig netwerkadres?</li>
-                                <li>Is 192.168.0.0/8 een geldig netwerkadres?</li>
-                                <li>Is 10.4.224.0/18 een geldig netwerkadres?</li>
-                                <li>Is 172.25.13.0/24 een subnet van 172.16.0.0/12?</li>
-                                <li>Is 172.16.0.0/13 een subnet van 172.16.0.0/12?</li>
-                                <li>Met welke eerste bytewaarden kunnen subnetten van 10.0.0.0/8 allemaal beginnen?</li>
-                                <li>Met welke eerste twee bytewaarden kunnen subnetten van 200.16.0.0/12 allemaal beginnen?</li>
-                            </ul>
+- Is 10.4.3.0/16 een geldig netwerkadres?
+- Is 192.168.0.0/16 een geldig netwerkadres?
+- Is 192.168.0.0/8 een geldig netwerkadres?
+- Is 10.4.224.0/18 een geldig netwerkadres?
+- Is 172.25.13.0/24 een subnet van 172.16.0.0/12?
+- Is 172.16.0.0/13 een subnet van 172.16.0.0/12?
+- Met welke eerste bytewaarde kunnen subnetten van 10.0.0.0/8 allemaal beginnen?
+- Met welke eerste twee bytewaarden kunnen subnetten van 200.16.0.0/12 allemaal beginnen?
 ---
                             <p>Gegeven:</p>
                             <ul>
@@ -236,7 +256,6 @@ IP-adressen voor:
 
 note:
 voor routers minstens twee
-
 ---
                 Routers
                 <aside class="notes">
