@@ -307,6 +307,7 @@ Achilleshiel IPv4
 note:
 
 Stel dat heel het Internet één groot lokaal netwerk was (en dat we toch IPv4 gebruikten), hoe veel adressen dan? (toon met rekenmachine)
+
 ---
 privé-adresblokken:
 - 10.0.0.0/8
@@ -319,6 +320,7 @@ note:
 - ze zijn gereserveerd voor privégebruik
 - je kan er zelf een netwerk mee maken dat niet (rechtstreeks) toegankelijk is via het Internet
 - probeer eens: `ifconfig` of `ipconfig` (naargelang je systeem) ⇒ je vindt waarschijnlijk minstens een adres in deze blokken terug
+
 ---
 NAT (PAT)
 
