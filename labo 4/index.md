@@ -268,16 +268,13 @@ note:
 ---
 Demo: invullen routeringstabel
 ---
-                Toekenning van adressen
-                <aside class="notes">
-                    <ul>
-                        <li>kan statisch</li>
-                        <li>kan geautomatiseerd (typisch gewoon <strong>een</strong> vrij adres nodig)</li>
-                        <li>werking DHCP is niet te kennen, als je weet dat het er is, zet je het gewoon aan</li>
-                        <li>ISP,... heeft blokken gekocht</li>
-                        <li>netmasker in PT <strong>klopt niet altijd</strong></li>
-                    </ul>
-                </aside>
+Toekenning van adressen
+
+- kan statisch
+- kan geautomatiseerd (typisch gewoon **een** vrij adres nodig)
+- werking DHCP is niet te kennen, als je weet dat het er is, zet je het gewoon aan
+- ISP,... heeft blokken gekocht
+- netmasker in PT **klopt niet altijd**, controleer het goed!
 ---
 Opdracht
 
@@ -291,6 +288,18 @@ note:
 
 Stel dat heel het Internet één groot lokaal netwerk was (en dat we toch IPv4 gebruikten), hoe veel adressen dan? (toon met rekenmachine)
 ---
+privé-adresblokken:
+- 10.0.0.0/8
+- 172.16.0.0/12
+- 192.168.0.0/16
+- localhost: 127.0.0.0/24
+
+note:
+- deze adresblokken zijn niet publiek toegankelijk
+- ze zijn gereserveerd voor privégebruik
+- je kan er zelf een netwerk mee maken dat niet (rechtstreeks) toegankelijk is via het Internet
+- probeer eens: `ifconfig` of `ipconfig` (naargelang je systeem) ⇒ je vindt waarschijnlijk minstens een adres in deze blokken terug
+---
 NAT (PAT)
 
 note:
@@ -298,27 +307,19 @@ note:
 - Vergelijk: ipconfig en myip.com
 - (indien IPv4): zal voor iedereen **zelfde** zijn!
 ---
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/2t8-WRZWCq8?si=IbcDw07DOS24lm2u&amp;start=47"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <aside class="notes">
-                    <ul>
-                        <li>bestaan variaties op het concept, maar dit is wat je typisch moet weten als programmeur</li>
-                        <ul>
-                            <li>sommige zaken moeten <strong>eerst</strong> de connectie opstarten</li>
-                            <li>poort die zichtbaar is aan ontvangerkant is niet noodzakelijk echte poort van de
-                                afzender</li>
-                            <li>PAT doorbreekt protocolstapel</li>
-                            <li>nadeel: routers moeten details van TCP/UDP kennen, zijn wel dominant maar hindert andere
-                                zaken die bovenop IP staan</li>
-                            <li>screenshot port forwarding Telenet settings = <strong>dit</strong></li>
-                            <li>NAT/PAT doet al vrij lang goed dienst, maar is een "hack". Manuele port forwarding is
-                                soms nodig, nieuwe protocols bovenop IP implementeren is lastig.</li>
-                            <li>truukje "hole punching" (en reden) moet je kennen voor applicaties</li>
-                        </ul>
-                    </ul>
-                </aside>
+<iframe width="560" height="315"
+    src="https://www.youtube.com/embed/2t8-WRZWCq8?si=IbcDw07DOS24lm2u&amp;start=47"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+
+note:
+- bestaan variaties op het concept, maar dit is wat je typisch moet weten als programmeur
+  - sommige zaken moeten **eerst** de connectie opstarten (jij kan thuis niet zomaar als server werken)
+  - poort die zichtbaar is aan ontvangerkant is niet noodzakelijk echte poort van de afzender
+  - PAT doorbreekt protocolstapel (netwerklaag kijkt naar poorten van transportlaag)
+    - nadeel: routers moeten details van TCP/UDP kennen, die protocols zijn wel dominant maar hindert andere zaken die bovenop IP staan
+    - NAT/PAT doet al vrij lang goed dienst, maar is een "hack". Manuele port forwarding is soms nodig, nieuwe protocols bovenop IP implementeren is lastig.
+    - truukje "hole punching" (en reden) moet je kennen voor applicaties
 ---
 ![port forwarding bij Telenet](./afbeeldingen/portforwarding.png)
