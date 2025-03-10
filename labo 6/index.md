@@ -20,6 +20,7 @@ Bind mounts en volumes
 Demonstratie: Express applicatie uitbreiden
 
 note:
+- Express applicatie gastenboek staat al in onderdeel Docker Compose op DigitAP
 - "in memory" tot en met "in folder"
 ---
 Vergelijking bind mounts en volumes

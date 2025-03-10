@@ -25,7 +25,11 @@ note:
 ---
 Workshop (deel 1)
 
+note:
+- https://learn.microsoft.com/en-us/training/modules/intro-to-containers/
 - Doorlopen "Build a containerized..." op Azure tot en met "Customize a Docker image to run your own web app, enkel "Retrieve..."."
+  - klassikaal toelichten niet-exercise gedeelten, exercise-gedeelten uit te voeren door studenten
+  - let op port forwarding, tekst bevat ergens een foutje mbt poort 80 en 8080
 ---
 - download de officiële `nginx` image van Docker Hub
 - maak er een container mee en link poort 80 van host naar container
