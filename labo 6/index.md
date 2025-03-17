@@ -71,7 +71,7 @@ note:
 - start twee containers op, één Apache server, de andere één die beschikt over `curl`
 - probeer de Apache aan te spreken via naam
 - dit werkt niet: containers zijn standaard geïsoleerd van elkaar
-- via hostnaam werkt het wel: zitten op een impliciet netwerk met beperkte mogelijkheden
+- via IP-adres werkt het wel: zitten op een impliciet netwerk met beperkte mogelijkheden
 ---
 Demonstratie: Express applicatie uitbreiden
 
