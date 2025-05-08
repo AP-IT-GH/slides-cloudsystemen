@@ -191,10 +191,8 @@ Oefening
 
 note:
 - deploy eigen site op een Azure VM
-- haal certificates en keys van Traefik.me
+- gebruik een self-signed certificate
 - **niet alle poorten zijn altijd bruikbaar, bv. web UI gebruikt 8080...**
-- kunnen files gewoon periodiek updaten via script
-  - **nadeel**: andere ....traefik.me sites kunnen zelfde certificaat gebruiken!
 ---
 TLS (automatisch)
 
