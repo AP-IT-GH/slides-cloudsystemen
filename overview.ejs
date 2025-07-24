@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Slides Cloudsystemen</title>
+    <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="../reveal.js/dist/theme/black.css">
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <ul>
+        <% for (let presentation of presentations) { %>
+            <li>
+                <a href="/<%= presentation %>">
+                    <%= presentation %>
+                </a>
+            </li>
+            <% } %>
+                <script src="../reveal.js/dist/reveal.js"></script>
+    </ul>
+</body>
+
+</html>

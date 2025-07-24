@@ -1,0 +1,4 @@
+- na een kwartier sluit de deur en blijft ze dicht
+- geen GSM's,... tijdens de les
+- verwittig ten laatste 15 minuten op voorhand via mail
+---
