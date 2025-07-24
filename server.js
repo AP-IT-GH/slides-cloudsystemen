@@ -13,13 +13,23 @@ const getDirectories = source =>
     fs.readdirSync(source, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name)
+const numberingRegex = /\d+ *- */;
 
 app.get('/', (_req, res, next) => {
-    presentations = getDirectories(__dirname)
-        .filter((s) => !s.startsWith(".") && !["node_modules", "voorbeeldslides"].includes(s));
+    presentationsWithImage = getDirectories(__dirname)
+        .filter((s) => !s.startsWith(".") && !["node_modules", "voorbeeldslides"].includes(s))
+        .map((s) => {
+            let imageLocation = "fallback-onderwerp.png";
+            let specificImageLocation = path.join(__dirname, s, "onderwerp.png")
+            if (fs.existsSync(specificImageLocation)) {
+                imageLocation = path.join(s, "onderwerp.png");
+            }
+            return { presentation: s, presentationImage: imageLocation, presentationName: s.replace(numberingRegex, "") }
+        });
+
     ejs.renderFile(
         overviewTemplateFilePath,
-        { presentations },
+        { presentationsWithImage },
         (err, str) => {
             if (err) return next(err);
             res.send(str);
