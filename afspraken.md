@@ -1,4 +1,9 @@
 - na een kwartier sluit de deur en blijft ze dicht
+  - verwittig ten laatste 15 minuten op voorhand via mail als je weet dat je te laat gaat zijn, anders blijft de deur dicht
 - geen GSM's,... tijdens de les
-- verwittig ten laatste 15 minuten op voorhand via mail
+- vraag laptops te sluiten tijdens uitleg
+- rustig lesverloop
+  - filmpjes,... = les verlaten
+- oortjes / hoofdtelefoon mag tijdens oefeningen
+- aanwezig zijn in de les = akkoord met de afspraken
 ---
