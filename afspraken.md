@@ -5,5 +5,8 @@
 - rustig lesverloop
   - filmpjes,... = les verlaten
 - oortjes / hoofdtelefoon mag tijdens oefeningen
+- les vroeger verlaten: bij start laten weten of volgende les missen
+- toegewezen klasgroep
+- aanwezigheid wordt genoteerd ter info maar staat niet op punten
 - aanwezig zijn in de les = akkoord met de afspraken
 ---
