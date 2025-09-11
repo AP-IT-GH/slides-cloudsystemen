@@ -1,12 +1,10 @@
-- na een kwartier sluit de deur en blijft ze dicht
-  - verwittig ten laatste 15 minuten op voorhand via mail als je weet dat je te laat gaat zijn, anders blijft de deur dicht
+- na een kwartier sluit de deur en blijft ze dicht tot de pauze
+  - verwittig *op voorhand* via mail als je weet dat je te laat gaat zijn, anders blijft de deur dicht
 - geen GSM's,... tijdens de les
-- vraag laptops te sluiten tijdens uitleg
 - rustig lesverloop
-  - filmpjes,... = les verlaten
-- oortjes / hoofdtelefoon mag tijdens oefeningen
-- les vroeger verlaten: bij start laten weten of volgende les missen
-- toegewezen klasgroep
-- aanwezigheid wordt genoteerd ter info maar staat niet op punten
+  - filmpjes kijken, social media browsen,... = les verlaten
+- oortjes / hoofdtelefoon toegelaten tijdens oefeningen
+- les vroeger verlaten: bij start laten weten
+- blijf in je toegewezen klasgroep
 - aanwezig zijn in de les = akkoord met de afspraken
 ---
