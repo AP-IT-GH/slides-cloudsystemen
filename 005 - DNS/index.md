@@ -114,10 +114,20 @@ Klassikale demonstratie
 note:
 - surf naar klanten.netnoobs.be
 - bekijk hoe het DNS-verkeer vloeit
-- surf ook naar bestellingen.netnoobs.be
+- surf ook naar personeel.netnoobs.be
 - idem
-- surf ten slotte naar winkelen.netnoobs.nl
-- idem
+---
+Klassikale oefening: winkelen.netnoobs.nl
+
+note:
+- duid mensen in de klas aan om tot antwoord te komen
+- hints:
+  - klanten.netnoobs.be zit al in systeem, we willen dat iets **hetzelfde** voorstelt
+  - wat is het "belangrijkste" deel dat anders is tegenover wat al werkt?
+    - trek daaruit conclusie rond waar we eerst iets kunnen aanpassen
+    - wat is het tweede belangrijkste deel van het domein?
+  - denk na over wanneer we al iets kunnen testen
+    - het kan zijn dat winkelen.netnoobs.nl al sneller bereikbaar is van andere plaatsen dan van bv. PC0
 ---
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dm8i4IFTA7k?si=oG083hSw_HZHSzG2"
     title="YouTube video player" frameborder="0"
