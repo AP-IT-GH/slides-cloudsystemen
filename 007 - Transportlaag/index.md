@@ -1,5 +1,15 @@
 # Transportlaag
 
+---
+
+### Herhaling: OSI-model
+
+![](./osi.svg)
+
+---
+
+Transportlaag?
+
 note:
 - dient voor communicatie tussen *processen* op machines, niet gewoon tussen machines
 - hier spreken we over "segmenten" voor datapakketjes
@@ -18,13 +28,18 @@ note:
 Voorbeelden:
 
 - 22
+- 53
 - 80
 - 443
 - 3306
+
+Toegekend door IANA
+Zie [Wikipedia](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers) voor meer
 ---
 Sockets
 
 note:
+- 22: ssh; 80: HTTP, 443: httpS, 3306: mysql; 53: DNS
 - unieke combinatie van **transportprotocol (TCP/UDP), IP-adres en poortnummer**
 - eindpunt voor communicatie, zoals een stopcontact
 - voor programmeurs: bytes in wegschrijven of bytes uit lezen
