@@ -5,10 +5,39 @@ note:
 - vereist client en server
 - applicatielaagprotocol
 - standaard luistert server op poort 22
-- client is voorzien bij Git Bash
-- vaak niet mogelijk via wachtwoord, wel asymmetrische sleutels (zie TLS)
-- klassiek gebruik = shell opstarten, maar ook voor Github, voor remote sessie VSC,...
-  - alomtegenwoordig in cloud infrastructuur!
+- client is voorzien bij Git Bash (op windows)
+- vaak niet mogelijk via wachtwoord, wel asymmetrische sleutels - afhankelijk van instelling SSH-server
+- klassiek gebruik = shell opstarten
+- maar ook voor Github, voor remote sessie VSC,...
+- alomtegenwoordig in cloud infrastructuur!
+  
+---
+
+![assymetrische encryptie](./afbeeldingen/key_generation.svg)
+
+note:
+- dit wordt gemaakt met hele coole maar moeilijke wiskunde
+- er zijn een aantal algoritmes (zoals elliptic curve, of met priemgetallen RSA, AES)
+
+---
+
+![signing](./afbeeldingen/signing.svg)
+
+note:
+- Wordt ook gebruikt bij certificaten van HTTPS en encryptie HTTPS om te _valideren_
+- Eventuele zijsprong: digipass met bankkaart qua werking (al is dit technisch niet correct want symmetrische encryptie!)
+- Eventuele zijsprong: bitcoin wallets
+  
+
+---
+
+![encrypting](./afbeeldingen/encrypting.svg)
+
+note:
+- maar hier in de andere richting, om te _encrypteren_
+- inzichtsvraag: wat is het verschil tussen beide diagrammen?
+- (sleutels zijn omgedraaid. Geen fundamenteel verschil tussen het publieke en private deel voor het algoritme, wel in manier van omgang. Private sleutel verlaat nooit het toestel, publieke sleutel mag door de hele wereld gekend zijn)
+
 ---
 ![interactie client-server](./afbeeldingen/SSHkeydiagram.webp)
 
