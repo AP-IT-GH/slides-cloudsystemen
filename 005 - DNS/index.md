@@ -79,12 +79,7 @@ note:
 - Je DNS-server is automatisch toegekend
 - Je kan hem systeembreed wijzigen of je kan bij `nslookup` een andere gebruiken
 - Probeer uit: nslookup `www.ap.be 8.8.8.8`
-- Krijg je hetzelfde antwoord als eerder?
-- Vraag aan volgende 4 DNS-servers waar www.amazon.com staat. Hou alle resultaten bij in één file:
-  - 8.8.8.8
-  - 195.130.130.4
-  - 204.13.250.31
-  - 195.238.2.21
+- Krijg je hetzelfde antwoord als met je default server?
 - Wat verklaart dat de resultaten gelijk of verschillend zijn?
 ---
 - A
@@ -138,3 +133,11 @@ note:
 - aanzienlijke beperkingen, maar gratis en geen CC vereist
 - kan ook TLS koppelen
 - **op school: bletchley netwerk gebruiken, AP wifi zal adressen blokkeren**
+- er bestaan alternatieven zoals DuckDNS
+---
+<iframe width="946" height="532" src="https://www.youtube.com/embed/kKsHo6r4_rc" title="Using Pi-Hole for Local DNS - Fast, Simple, and Easy Guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+note:
+- lokale DNS-server (handig als je thuis meerdere machines hebt en je wil niet telkens met hun IP werken)
+- ad blocking voor je thuisnetwerk
+  - via DNS, maar niet alle ads kunnen op deze manier geblokkeerd worden
