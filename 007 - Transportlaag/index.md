@@ -34,12 +34,15 @@ Voorbeelden:
 - 3306
 
 Toegekend door IANA
+
 Zie [Wikipedia](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers) voor meer
+
+note:
+- 22: ssh; 80: HTTP, 443: httpS, 3306: mysql; 53: DNS
 ---
 Sockets
 
 note:
-- 22: ssh; 80: HTTP, 443: httpS, 3306: mysql; 53: DNS
 - unieke combinatie van **transportprotocol (TCP/UDP), IP-adres en poortnummer**
 - eindpunt voor communicatie, zoals een stopcontact
 - voor programmeurs: bytes in wegschrijven of bytes uit lezen
@@ -69,6 +72,8 @@ note:
 - Pakketverlies of volgorde van ontvangst wordt niet geregeld.
 - Dit protocol is vooral handig als er af en toe wat data verloren mag gaan of uit volgorde mag aankomen, maar weinig overhead gewenst is.
 - Sommige netwerken blokkeren dit gewoonweg!
+- (Flauw) mopje van de dag: **I wanted to tell you a joke about UDP, but you might not get it**
+
 ---
 TCP
 
@@ -105,3 +110,16 @@ packet-beta
 note:
 - connectiegeoriënteerd, maar nog steeds packet switching, geen circuit switching!
 - **when in doubt, use TCP!**
+- Het andere flauwe mopje van de dag: **What is the similarity between a well-trained dog and TCP? They both do handshakes**
+
+---
+
+![](meme.png)
+
+---
+
+# Recap
+
+- Poorten geven de data aan het juiste process/programma
+- TCP: data komt in volgorde en normaalgezien toe
+- UDP: geen garantie op toekomen of volgorde
